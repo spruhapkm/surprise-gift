@@ -47,13 +47,6 @@ body{background:#07080f;color:#ede8df;font-family:'DM Sans',sans-serif;overflow-
 .msg-text{font-family:'Cormorant Garamond',serif;font-size:clamp(17px,2.8vw,24px);font-style:italic;line-height:1.75;color:#c9bfb0;font-weight:300;position:relative;z-index:1}
 .msg-from{margin-top:28px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c9a84c;font-family:'DM Sans',sans-serif;font-style:normal}
 
-.upload-zone{border:1px dashed rgba(201,168,76,.2);border-radius:14px;padding:32px;text-align:center;cursor:pointer;transition:all .25s ease;position:relative;margin-bottom:16px}
-.upload-zone:hover{border-color:rgba(201,168,76,.45);background:rgba(201,168,76,.03)}
-.upload-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-.upload-icon{font-size:28px;margin-bottom:10px}
-.upload-hint{font-size:13px;color:#5a5248}
-.upload-hint b{color:#c9a84c;font-weight:500}
-
 .img-wall{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .img-frame{border-radius:10px;overflow:hidden;position:relative;cursor:pointer;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);transition:transform .3s cubic-bezier(.34,1.56,.64,1),border-color .3s;aspect-ratio:1;display:flex;align-items:center;justify-content:center}
 .img-frame.tall{grid-row:span 2;aspect-ratio:auto;min-height:260px}
@@ -129,6 +122,7 @@ textarea.finput{min-height:72px;resize:none;margin-bottom:10px;display:block}
 
 @keyframes cfFall{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
 </style>
+<base target="_blank">
 </head>
 <body>
 
@@ -137,13 +131,13 @@ textarea.finput{min-height:72px;resize:none;margin-bottom:10px;display:block}
 <!-- HERO -->
 <section class="hero">
   <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center">
-    <div class="hero-eyebrow">Turning Forty-Five ✦ 2025</div>
+    <div class="hero-eyebrow">Turning Forty-Five ✦ 2026</div>
     <div class="monogram"><div class="monogram-inner">VY</div></div>
     <div style="position:relative">
       <div class="hero-age">45</div>
       <div class="hero-name" style="position:relative;z-index:1">Vijay <span>Yadav</span></div>
     </div>
-    <div class="hero-tagline" style="margin-top:12px">The man. The legend. The 45-year-old.</div>
+    <div class="hero-tagline" style="margin-top:12px">Celebrating 45 years of excellence</div>
     <div style="height:36px"></div>
     <div class="cd-wrap" id="cd-wrap">
       <div class="cd-box"><div class="cd-num" id="cd-d">00</div><div class="cd-lbl">Days</div></div>
@@ -155,7 +149,7 @@ textarea.finput{min-height:72px;resize:none;margin-bottom:10px;display:block}
       <div class="cd-box"><div class="cd-num" id="cd-s">00</div><div class="cd-lbl">Secs</div></div>
     </div>
   </div>
-  <div class="hero-tag-by">Made with love by <span>Spruha</span> 🎀</div>
+  <div class="hero-tag-by">Celebrating <span>Vijay Yadav</span> 🎀</div>
   <div class="scroll-cue" onclick="document.getElementById('smsg').scrollIntoView({behavior:'smooth'})">
     <span>Scroll</span><div class="scroll-line"></div>
   </div>
@@ -168,15 +162,15 @@ textarea.finput{min-height:72px;resize:none;margin-bottom:10px;display:block}
   <div class="stats-row">
     <div class="stat"><div class="stat-num">45</div><div class="stat-lbl">Years of awesome</div></div>
     <div class="stat"><div class="stat-num" id="stat-days">16436</div><div class="stat-lbl">Days well lived</div></div>
-    <div class="stat"><div class="stat-num">1</div><div class="stat-lbl">Spruha fan club</div></div>
+    <div class="stat"><div class="stat-num">1</div><div class="stat-lbl">Special celebration</div></div>
   </div>
-  <div class="sec-label">From Spruha</div>
-  <h2 class="sec-heading">A birthday message</h2>
+  <div class="sec-label">Birthday Note</div>
+  <h2 class="sec-heading">A birthday note</h2>
   <div class="msg-card">
     <p class="msg-text">
-      Dad, you've been the coolest, most reliable person in my life for all 45 of your years. You never panic, always have a plan, and somehow manage to be right about most things — which is honestly a little annoying. Here's to you, the man who taught me that calm wins every time. Happy birthday, old man. 🥂
+      Happy 45th birthday! Wishing you a wonderful year ahead filled with success, good health, and great moments. Here's to celebrating this milestone in style. 🥂
     </p>
-    <div class="msg-from">— Spruha ✦</div>
+    <div class="msg-from">— With best wishes ✦</div>
   </div>
 </div>
 
@@ -185,32 +179,28 @@ textarea.finput{min-height:72px;resize:none;margin-bottom:10px;display:block}
 <!-- PHOTO WALL -->
 <div class="section" id="sphotos">
   <div class="sec-label">Memories</div>
-  <h2 class="sec-heading">The Vijay Yadav photo wall</h2>
-  <div class="upload-zone" onclick="document.getElementById('photoUp').click()">
-    <input type="file" id="photoUp" accept="image/*" multiple onchange="handleUpload(event)">
-    <div class="upload-icon">📸</div>
-    <div class="upload-hint"><b>Click to add photos</b> — fill up Dad's wall</div>
-  </div>
+  <h2 class="sec-heading">Photo gallery</h2>
+
   <div class="img-wall" id="imgWall">
     <div class="img-frame tall" onclick="openLb(0)">
-      <div class="img-ph"><div class="img-ph-icon">🌟</div><div class="img-ph-lbl">The Boss</div></div>
-      <div class="img-ov"><span class="img-cap">Vijay Yadav, 45</span></div>
+      <img src="images/photo1.jpg" alt="Vijay Yadav" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <div class="img-ov"><span class="img-cap">Celebrating 45</span></div>
     </div>
     <div class="img-frame" onclick="openLb(1)">
-      <div class="img-ph"><div class="img-ph-icon">👨‍👧</div><div class="img-ph-lbl">Dad &amp; Spruha</div></div>
-      <div class="img-ov"><span class="img-cap">Father &amp; daughter</span></div>
+      <img src="images/photo2.jpg" alt="Photo 2" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <div class="img-ov"><span class="img-cap">Photo 2</span></div>
     </div>
     <div class="img-frame" onclick="openLb(2)">
-      <div class="img-ph"><div class="img-ph-icon">🏆</div><div class="img-ph-lbl">Winning moments</div></div>
-      <div class="img-ov"><span class="img-cap">Legend moves</span></div>
+      <img src="images/photo3.jpg" alt="Photo 3" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <div class="img-ov"><span class="img-cap">Photo 3</span></div>
     </div>
     <div class="img-frame wide" onclick="openLb(3)">
-      <div class="img-ph"><div class="img-ph-icon">✈️</div><div class="img-ph-lbl">Adventures &amp; travels</div></div>
-      <div class="img-ov"><span class="img-cap">The Yadav adventures</span></div>
+      <img src="images/photo4.jpg" alt="Photo 4" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <div class="img-ov"><span class="img-cap">Photo 4</span></div>
     </div>
     <div class="img-frame" onclick="openLb(4)">
-      <div class="img-ph"><div class="img-ph-icon">🎉</div><div class="img-ph-lbl">Good times</div></div>
-      <div class="img-ov"><span class="img-cap">Party mode on</span></div>
+      <img src="images/photo5.jpg" alt="Photo 5" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <div class="img-ov"><span class="img-cap">Photo 5</span></div>
     </div>
   </div>
 </div>
@@ -220,31 +210,31 @@ textarea.finput{min-height:72px;resize:none;margin-bottom:10px;display:block}
 <!-- TIMELINE -->
 <div class="section" id="stl">
   <div class="sec-label">Through the years</div>
-  <h2 class="sec-heading">Vijay Yadav — a timeline</h2>
+  <h2 class="sec-heading">A timeline</h2>
   <div class="tl" id="tl">
     <div class="tl-item">
       <div class="tl-dot"></div>
-      <div class="tl-yr">Day one</div>
-      <div class="tl-h">Vijay Yadav enters the chat 🌅</div>
-      <div class="tl-p">The world got a little more interesting.</div>
+      <div class="tl-yr">1981</div>
+      <div class="tl-h">The beginning 🌅</div>
+      <div class="tl-p">Vijay Yadav enters the world.</div>
     </div>
     <div class="tl-item">
       <div class="tl-dot"></div>
-      <div class="tl-yr">The grind years</div>
-      <div class="tl-h">Built it all from scratch 🏗️</div>
-      <div class="tl-p">Hard work, sharp mind, zero shortcuts. Classic Vijay.</div>
+      <div class="tl-yr">The journey</div>
+      <div class="tl-h">Building a career 🏗️</div>
+      <div class="tl-p">Years of dedication and professional growth.</div>
     </div>
     <div class="tl-item">
       <div class="tl-dot"></div>
-      <div class="tl-yr">Best title yet</div>
-      <div class="tl-h">Became Spruha's Dad 🎀</div>
-      <div class="tl-p">Arguably his greatest achievement. She agrees.</div>
+      <div class="tl-yr">Family</div>
+      <div class="tl-h">New beginnings 🎀</div>
+      <div class="tl-p">Building a family and creating lasting memories.</div>
     </div>
     <div class="tl-item">
       <div class="tl-dot"></div>
-      <div class="tl-yr">Level 45 unlocked</div>
-      <div class="tl-h">Still the coolest guy in the room 🥂</div>
-      <div class="tl-p">Forty-five and absolutely thriving. The era continues.</div>
+      <div class="tl-yr">2026</div>
+      <div class="tl-h">45 and thriving 🥂</div>
+      <div class="tl-p">Celebrating 45 years of life, experience, and wisdom.</div>
     </div>
   </div>
 </div>
@@ -254,26 +244,26 @@ textarea.finput{min-height:72px;resize:none;margin-bottom:10px;display:block}
 <!-- WISHES -->
 <div class="section" id="swishes">
   <div class="sec-label">Wishes &amp; messages</div>
-  <h2 class="sec-heading">Drop a birthday note for Vijay</h2>
+  <h2 class="sec-heading">Birthday wishes</h2>
   <div class="wish-grid" id="wishGrid">
     <div class="wish-card">
       <span class="wish-emoji">🥂</span>
-      <div class="wish-name">Spruha</div>
-      <div class="wish-txt">Happy birthday, Dad! 45 suits you very well. Here's to you being the same amount of cool for the next 45.</div>
+      <div class="wish-name">Family</div>
+      <div class="wish-txt">Happy 45th birthday! Wishing you a wonderful year ahead filled with joy and success.</div>
     </div>
     <div class="wish-card">
       <span class="wish-emoji">🎂</span>
-      <div class="wish-name">The family</div>
-      <div class="wish-txt">Wishing Vijay a day as great as he is — which means it's going to be a very good day indeed.</div>
+      <div class="wish-name">Friends</div>
+      <div class="wish-txt">Cheers to 45 years! May this year bring you everything you wish for.</div>
     </div>
     <div class="wish-card">
       <span class="wish-emoji">🎯</span>
-      <div class="wish-name">Old friends</div>
-      <div class="wish-txt">Still the same Vijay. Somehow even sharper at 45. We're not jealous. (We're a little jealous.)</div>
+      <div class="wish-name">Colleagues</div>
+      <div class="wish-txt">Happy birthday! Wishing you continued success and great health at 45.</div>
     </div>
   </div>
   <div class="wish-form">
-    <h3>Add your wish for Vijay ✍️</h3>
+    <h3>Leave a birthday message ✍️</h3>
     <div class="frow">
       <input class="finput" type="text" id="wName" placeholder="Your name">
       <input class="finput" type="text" id="wEmoji" placeholder="Emoji (e.g. 🎉)">
@@ -289,17 +279,17 @@ textarea.finput{min-height:72px;resize:none;margin-bottom:10px;display:block}
     <div class="music-disc" id="disc">🎶</div>
     <div class="music-info">
       <div class="music-t">Vijay's birthday playlist</div>
-      <div class="music-s">45 candles · playing now ✦</div>
+      <div class="music-s">Birthday tunes · playing now ✦</div>
     </div>
     <button class="play-btn" id="playBtn" onclick="togglePlay()">▶</button>
   </div>
-  <button class="confetti-btn" onclick="doConfetti()">✦ Celebrate Vijay — launch confetti ✦</button>
+  <button class="confetti-btn" onclick="doConfetti()">✦ Launch confetti ✦</button>
 </div>
 
 <!-- FOOTER -->
 <div class="sig-footer">
   <div class="sig-glyph">✦</div>
-  <div class="sig-by">Crafted with love by <span>Spruha Yadav</span> · For the one and only Vijay</div>
+  <div class="sig-by">Made with care · Celebrating Vijay Yadav</div>
 </div>
 
 <!-- LIGHTBOX -->
@@ -311,7 +301,6 @@ textarea.finput{min-height:72px;resize:none;margin-bottom:10px;display:block}
 </div>
 
 <script>
-const uploads = [];
 let playing = false;
 
 // ── Particle background ──
@@ -341,9 +330,9 @@ function drawPts() {
 resize(); initPts(); drawPts();
 window.addEventListener('resize', () => { resize(); initPts(); });
 
-// ── Countdown — set Dad's actual birthday here ──
-// Change this date to Vijay's real birthday: new Date(YEAR, MONTH-1, DAY)
-const BIRTHDAY = new Date(new Date().getFullYear(), 5, 15); // example: June 15
+// ── Countdown — birthday date ──
+// Birthday: May 16, 2026
+const BIRTHDAY = new Date(2026, 4, 16); // May 16, 2026
 
 function pad(n) { return String(n).padStart(2,'0'); }
 function tick() {
@@ -367,33 +356,14 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.15 });
 document.querySelectorAll('.tl-item').forEach(el => obs.observe(el));
 
-// ── Photo upload ──
-function handleUpload(e) {
-  Array.from(e.target.files).forEach(f => {
-    const r = new FileReader();
-    r.onload = ev => { uploads.push(ev.target.result); refreshWall(); };
-    r.readAsDataURL(f);
-  });
-}
-function refreshWall() {
-  document.querySelectorAll('#imgWall .img-frame').forEach((fr, i) => {
-    if (!uploads[i]) return;
-    fr.style.backgroundImage = `url(${uploads[i]})`;
-    fr.style.backgroundSize = 'cover';
-    fr.style.backgroundPosition = 'center';
-    const ph = fr.querySelector('.img-ph');
-    if (ph) ph.style.display = 'none';
-  });
-}
-
 // ── Lightbox ──
+const imagePaths = ['images/photo1.jpg', 'images/photo2.jpg', 'images/photo3.jpg', 'images/photo4.jpg', 'images/photo5.jpg'];
+
 function openLb(idx) {
   const lb = document.getElementById('lb');
   const content = document.getElementById('lbContent');
   lb.classList.add('open');
-  content.innerHTML = uploads[idx]
-    ? `<img class="lb-img" src="${uploads[idx]}" alt="Photo">`
-    : `<div class="lb-ph"><div class="lg-icon">🖼️</div><div class="lg-txt">Upload a photo to see it here</div></div>`;
+  content.innerHTML = `<img class="lb-img" src="${imagePaths[idx]}" alt="Photo ${idx+1}">`;
 }
 function closeLb() {
   document.getElementById('lb').classList.remove('open');
